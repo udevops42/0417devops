@@ -1,9 +1,28 @@
 #!/bin/sh
-echo "Hey enter values for a and b"
-read a b
-if [ $a == $b ]
-then 
-   echo "a is equal to b"
+echo "ENTER APPLICATION ENV FOR DEPLOYMENT"
+read ENVAPP  
+if [ $ENVAPP == QA ]
+then
+   cd /tmp
+   mkdir $ENVAPP
+   touch /tmp/$ENVAPP/$ENVAPP.json
+   echo "helloworld QA" >> /tmp/$ENVAPP/$ENVAPP.json
 else 
-   echo " a is not equal to b"
-fi 
+   cd /tmp
+   mkdir $ENVAPP
+   touch /tmp/$ENVAPP/$ENVAPP.json
+   echo "Hello World  $ENVAPP" >> /tmp/$ENVAPP/$ENVAPP.json
+fi
+
+
+
+#if [ $val1 == $val2 ]
+#then
+#   condition1
+#   condition2
+#   condition3
+#else 
+#   condition4
+#   condition5
+#   condition5
+#fi
