@@ -3,15 +3,24 @@ echo "ENTER APPLICATION ENV FOR DEPLOYMENT"
 read ENVAPP  
 if [ $ENVAPP == QA ]
 then
-   cd /tmp
-   mkdir $ENVAPP
-   touch /tmp/$ENVAPP/$ENVAPP.json
-   echo "helloworld QA" >> /tmp/$ENVAPP/$ENVAPP.json
+
+  echo " ENV is QA"
+  # cd /tmp
+  # mkdir $ENVAPP
+   #touch /tmp/$ENVAPP/$ENVAPP.json
+   #echo "helloworld QA" >> /tmp/$ENVAPP/$ENVAPP.json
 else 
-   cd /tmp
-   mkdir $ENVAPP
-   touch /tmp/$ENVAPP/$ENVAPP.json
-   echo "Hello World  $ENVAPP" >> /tmp/$ENVAPP/$ENVAPP.json
+   if [ $ENVAPP != DEV ]
+      then
+         echo "ENV is PREPROD"
+     else
+        echo " ENV is DEV"
+       fi
+
+  # cd /tmp
+  # mkdir $ENVAPP
+  # touch /tmp/$ENVAPP/$ENVAPP.json
+  # echo "Hello World  $ENVAPP" >> /tmp/$ENVAPP/$ENVAPP.json
 fi
 
 
